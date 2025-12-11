@@ -9,9 +9,8 @@ public class GameControl : MonoBehaviour
 {
     public static GameControl instance; 
     public GameObject gameOverText;
+    public Text scoreText;
     //public Text scoreText;
-    //public GameObject scoreText;
-   public Text scoreText;
     public bool gameOver = false;
     public float scrollSpeed = -1.5f;
     private int score = 0;
@@ -48,7 +47,7 @@ public class GameControl : MonoBehaviour
             return; 
         }
         score++;
-        scoreText.text = "Score: " + score.ToString (); 
+        scoreText.text = "Score:" + score.ToString (); 
     }
 
 
