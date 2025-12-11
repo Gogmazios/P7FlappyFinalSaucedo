@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine. 
+using UnityEngine.UI; 
 
 public class GameControl : MonoBehaviour
 {
     public static GameControl instance; 
     public GameObject gameOverText;
+    public Text scoreText; 
     public bool gameOver = false;
-    public float scrollSpeed = -1.5f; 
+    public float scrollSpeed = -1.5f;
+    private int score = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,6 +38,19 @@ public class GameControl : MonoBehaviour
 
 
     }
+
+    public void BirdScored()
+    {
+        if (gameOver)
+        {
+            return; 
+        }
+        score++;
+        scoreText.text = "Score: " + score.ToString(); 
+    }
+
+
+
 
     //Also known as Bird Died
     public void KFC()
